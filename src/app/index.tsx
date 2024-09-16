@@ -1,12 +1,12 @@
 import { Stack } from 'expo-router';
-import { View } from 'react-native';
-import { LinkButton } from 'src/components/LinkButton';
+
+import { Text, StyleSheet, View } from 'react-native';
 
 import { ScreenLayout } from 'src/components/ScreenLayout';
-import { Text, StyleSheet } from 'react-native';
 import { appTheme } from 'src/config/theme';
 
 export default function HomeScreen() {
+
   return (
     <ScreenLayout testID="create-screen-layout">
       <View testID="create-screen-content">
@@ -14,7 +14,6 @@ export default function HomeScreen() {
         <Text style={styles.title} testID="create-screen-title">
           Create Post
         </Text>
-        <LinkButton href="/posts" text="Go To Posts" />
       </View>
     </ScreenLayout>
   );

@@ -3,7 +3,6 @@ import { Stack } from 'expo-router';
 import { ScreenLayout } from 'src/components/ScreenLayout';
 import { appTheme } from 'src/config/theme';
 import { View, Text, StyleSheet } from 'react-native';
-import { LinkButton } from 'src/components/LinkButton';
 
 export default function PostsScreen() {
   return (
@@ -13,7 +12,6 @@ export default function PostsScreen() {
         <Text style={styles.title} testID="posts-screen-title">
           Posts Screen
         </Text>
-        <LinkButton href="/" text="Go To Create" />
       </View>
     </ScreenLayout>
   );
