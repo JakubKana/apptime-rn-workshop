@@ -6,9 +6,7 @@
 
 This repo is a scaffolding of an Expo application that uses Expo Router and it's file based routing capibilities. It has all the necessary packages needed to just start the application and begin adding routes.
 
-The reason it exists is to mitigate the amount of work needed to add typescript, jest, absolute imports and eslint into the traditional quickstart that the "create-expo-app" CLI command provides.
-
-Two sample screens have been created, so everything will run out of the box. Also a number of useful scripts have been created in the package.json that allow the ability to run, build, test, lint and serve the application.
+Repo is fork of expo-router-typescript for AppTime Innovations react-native workshop.
 
 ---
 
@@ -36,7 +34,7 @@ Two sample screens have been created, so everything will run out of the box. Als
 
 ```bash
 # Clone Repo
-git clone git@github.com:thedevenvironment/expo-router-typescript.git
+git clone git@github.com:JakubKana/apptime-rn-workshop.git
 ```
 
 ```bash

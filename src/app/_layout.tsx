@@ -1,27 +1,29 @@
-import 'expo-dev-client'
-import { ThemeProvider as NavProvider } from '@react-navigation/native'
-import { Slot } from 'expo-router'
-import { StatusBar } from 'expo-status-bar'
-import styled, { ThemeProvider, type DefaultTheme } from 'styled-components/native'
-import { appTheme, navTheme } from 'src/config/theme'
+import 'expo-dev-client';
+import { ThemeProvider as NavProvider } from '@react-navigation/native';
+import { Slot } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+
+import { appTheme, navTheme } from 'src/config/theme';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet } from 'react-native';
 
 export default function AppLayout() {
   return (
-    <ThemeProvider theme={appTheme as DefaultTheme}>
+    <SafeAreaProvider>
       <StatusBar style="light" />
-      <S.AppWrapper>
+      <SafeAreaView style={styles.appwrapper}>
         <NavProvider value={navTheme}>
           <Slot screenOptions={{ headerShown: false }} />
         </NavProvider>
-      </S.AppWrapper>
-    </ThemeProvider>
-  )
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
 }
 
-const S = {
-  AppWrapper: styled.SafeAreaView`
-    flex: 1;
-    flex-direction: column;
-    background-color: ${appTheme.background};
-  `
-}
+const styles = StyleSheet.create({
+  appwrapper: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: appTheme.background
+  }
+});

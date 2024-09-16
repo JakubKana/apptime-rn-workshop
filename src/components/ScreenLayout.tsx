@@ -1,20 +1,30 @@
-import styled from 'styled-components/native'
-import Spinner from 'src/components/Spinner'
-import useCacheAssets from 'src/hooks/useCacheAssets'
+import { Spinner } from 'src/components/Spinner';
+import useCacheAssets from 'src/hooks/useCacheAssets';
 
-interface Props {
-  children: React.ReactNode
-  testID?: string
+import { ReactNode } from 'react';
+import { View, ViewStyle, StyleSheet } from 'react-native';
+
+interface ScreenLayoutProps {
+  children: ReactNode;
+  testID?: string;
+  layoutStyles?: ViewStyle;
 }
 
-export default function ScreenLayout({ children, testID }: Props) {
-  const areAssetsCached = useCacheAssets()
+const ScreenLayout = ({ children, testID, layoutStyles }: ScreenLayoutProps) => {
+  const areAssetsCached = useCacheAssets();
 
-  return <S.Wrapper testID={testID}>{areAssetsCached ? children : <Spinner />}</S.Wrapper>
-}
+  return (
+    <View testID={testID} style={[styles.layout, layoutStyles]}>
+      {areAssetsCached ? children : <Spinner />}
+    </View>
+  );
+};
 
-const S = {
-  Wrapper: styled.View`
-    flex: 1;
-  `
-}
+const styles = StyleSheet.create({
+  layout: {
+    paddingHorizontal: 20,
+    paddingVertical: 20
+  }
+});
+
+export { ScreenLayout };

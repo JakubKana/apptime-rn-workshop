@@ -1,18 +1,18 @@
-import { dimensions, height, width } from 'src/utils/dimensions'
+import { dimensions, height, width } from 'src/utils/dimensions';
 
 /**
  * Theme For Styled Components
  * -
  */
 export const appTheme = {
-  background: '#222',
-  primary: '#FFF',
+  background: '#D3D3D3',
+  primary: '#ff6600',
   secondary: '#CCC',
   highlight: '#FF2353',
   size: dimensions,
   windowHeight: `${height}px`,
   windowWidth: `${width}px`
-}
+};
 
 /**
  * Theme For Expo Navigation Header
@@ -28,4 +28,4 @@ export const navTheme = {
     primary: appTheme.primary,
     text: appTheme.primary
   }
-}
+};

@@ -5,7 +5,7 @@
   "endOfLine": "lf",
   "jsxSingleQuote": false,
   "printWidth": 150,
-  "semi": false,
+  "semi": true,
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "none",

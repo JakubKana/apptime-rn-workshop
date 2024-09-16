@@ -1,0 +1,14 @@
+
+Vytvořte aplikaci, která umožní vytvářet posty
+
+- Vytvořte 2 screeny a navigaci mezi němi
+používáme expo router, proto každý screen je linkovatelný file-based src/app
+- Vytvořte komponenty do složky src/components 
+- Doplňte kód do store/db.ts pro potřeby uložení postu
+- Vytvořte styly pro komponenty
+
+Dokumentace
+EXPO
+https://docs.expo.dev/versions/latest/
+React-Native
+https://reactnative.dev/docs/components-and-apis

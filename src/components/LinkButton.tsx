@@ -1,41 +1,41 @@
-import styled from 'styled-components/native'
-import { Link } from 'expo-router'
-import { openURL } from 'expo-linking'
+import { StyleSheet, Text, View, ViewStyle } from 'react-native';
+import { Link } from 'expo-router';
 
-interface Props {
-  href: string
-  text: string
+interface LinkButtonProps {
+  href: string;
+  containerStyle?: ViewStyle;
+  text: string;
 }
 
-export default function LinkButton({ href, text }: Props) {
-  return href.substring(0, 1) === '/' ? (
-    <S.InternalLink testID="link-button" href={href}>
-      <S.LinkText testID="link-button-text">{text}</S.LinkText>
-    </S.InternalLink>
-  ) : (
-    <S.ExternalLink testID="link-button" onPress={() => openURL(href)}>
-      <S.LinkText testID="link-button-text">{text}</S.LinkText>
-    </S.ExternalLink>
-  )
-}
+export const LinkButton = ({ href, text, containerStyle }: LinkButtonProps) => {
+  if (href.substring(0, 1) !== '/') {
+    throw new Error('LinkButton href must start with a forward slash (/)');
+  }
+  return (
+    <View style={[styles.container, containerStyle]}>
+      <Link href={href} style={styles.internalLink}>
+        <Text style={styles.text} testID="link-button">
+          {text}
+        </Text>
+      </Link>
+    </View>
+  );
+};
 
-const S = {
-  ExternalLink: styled.TouchableOpacity`
-    padding: ${(p) => p.theme.size(10, 'px')} ${(p) => p.theme.size(20, 'px')};
-    border-color: ${(p) => p.theme.highlight};
-    border-width: ${(p) => p.theme.size(1, 'px')};
-    border-radius: ${(p) => p.theme.size(5, 'px')};
-    background-color: transparent;
-  `,
-  InternalLink: styled(Link)`
-    padding: ${(p) => p.theme.size(10, 'px')} ${(p) => p.theme.size(20, 'px')};
-    border-color: ${(p) => p.theme.highlight};
-    border-width: ${(p) => p.theme.size(1, 'px')};
-    border-radius: ${(p) => p.theme.size(5, 'px')};
-    background-color: transparent;
-  `,
-  LinkText: styled.Text`
-    color: ${(p) => p.theme.highlight};
-    font-weight: 600;
-  `
-}
+const styles = StyleSheet.create({
+  container: {
+    maxWidth: 200,
+    alignSelf: 'center'
+  },
+  internalLink: {
+    padding: 10,
+    borderColor: '#d45800',
+    borderWidth: 1,
+    borderRadius: 5,
+    backgroundColor: '#ff6600'
+  },
+  text: {
+    color: '#fff',
+    fontWeight: '600'
+  }
+});

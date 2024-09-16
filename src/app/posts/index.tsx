@@ -1,20 +1,19 @@
 import { Stack } from 'expo-router';
-import { View } from 'react-native';
-import { LinkButton } from 'src/components/LinkButton';
 
 import { ScreenLayout } from 'src/components/ScreenLayout';
-import { Text, StyleSheet } from 'react-native';
 import { appTheme } from 'src/config/theme';
+import { View, Text, StyleSheet } from 'react-native';
+import { LinkButton } from 'src/components/LinkButton';
 
-export default function HomeScreen() {
+export default function PostsScreen() {
   return (
-    <ScreenLayout testID="create-screen-layout">
-      <View testID="create-screen-content">
-        <Stack.Screen options={{ title: 'Create' }} />
-        <Text style={styles.title} testID="create-screen-title">
-          Create Post
+    <ScreenLayout testID="posts-screen-layout">
+      <View testID="posts-screen-content">
+        <Stack.Screen options={{ title: 'Posts' }} />
+        <Text style={styles.title} testID="posts-screen-title">
+          Posts Screen
         </Text>
-        <LinkButton href="/posts" text="Go To Posts" />
+        <LinkButton href="/" text="Go To Create" />
       </View>
     </ScreenLayout>
   );
