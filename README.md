@@ -1,6 +1,4 @@
-![Expo Router Typescript](https://thedevenvironment.com/expo-router-typescript.png)
-
----
+***App Time Expo Router Typescript***
 
 **INTRODUCTION**
 
