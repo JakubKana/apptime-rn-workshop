@@ -1,4 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { appTheme } from 'src/config/theme';
 
 interface LinkButtonProps {
   onPress?: () => void;
@@ -7,10 +8,10 @@ interface LinkButtonProps {
 
 export const Button = ({ title, onPress }: LinkButtonProps) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} style={{ height: 50 }}>
       <View testID="touchable-button-view" style={styles.touchable}>
         <Text testID="touchable-button-text" style={styles.text}>
-          {title}
+          {title.toUpperCase()}
         </Text>
       </View>
     </TouchableOpacity>
@@ -19,15 +20,19 @@ export const Button = ({ title, onPress }: LinkButtonProps) => {
 
 const styles = StyleSheet.create({
   touchable: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 10,
     borderColor: '#fff',
     borderWidth: 1,
-    borderRadius: 5,
-    backgroundColor: 'transparent'
+    borderRadius: 10,
+    backgroundColor: '#000'
   },
 
   text: {
-    color: '#fff',
+    fontSize: 16,
+    color: appTheme.primary,
     fontWeight: '600'
   }
 });

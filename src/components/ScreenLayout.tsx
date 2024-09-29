@@ -2,7 +2,8 @@ import { Spinner } from 'src/components/Spinner';
 import useCacheAssets from 'src/hooks/useCacheAssets';
 
 import { ReactNode } from 'react';
-import { View, ViewStyle, StyleSheet } from 'react-native';
+import { ViewStyle, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface ScreenLayoutProps {
   children: ReactNode;
@@ -14,16 +15,16 @@ const ScreenLayout = ({ children, testID, layoutStyles }: ScreenLayoutProps) => 
   const areAssetsCached = useCacheAssets();
 
   return (
-    <View testID={testID} style={[styles.layout, layoutStyles]}>
+    <SafeAreaView testID={testID} style={[styles.layout, layoutStyles]}>
       {areAssetsCached ? children : <Spinner />}
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   layout: {
-    paddingHorizontal: 20,
-    paddingVertical: 20
+    flex: 1,
+    paddingHorizontal: 20
   }
 });
 

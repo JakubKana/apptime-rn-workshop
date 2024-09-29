@@ -40,6 +40,8 @@ git clone git@github.com:JakubKana/apptime-rn-workshop.git
 ```bash
 # Install Dependencies
 npm run setup
+# If not working use
+npm config set legacy-peer-deps true
 ```
 
 ```bash

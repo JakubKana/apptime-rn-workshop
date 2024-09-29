@@ -1,1 +1,3 @@
-import 'expo-router/entry'
+import 'expo-router/entry';
+
+console.log('init application');

@@ -1,4 +1,4 @@
-import { dimensions, height, width } from 'src/utils/dimensions';
+import { dimensions } from 'src/utils/dimensions';
 
 /**
  * Theme For Styled Components
@@ -7,11 +7,9 @@ import { dimensions, height, width } from 'src/utils/dimensions';
 export const appTheme = {
   background: '#D3D3D3',
   primary: '#ff6600',
-  secondary: '#CCC',
-  highlight: '#FF2353',
-  size: dimensions,
-  windowHeight: `${height}px`,
-  windowWidth: `${width}px`
+  secondary: '#ff8635',
+  highlight: '#ffa871',
+  size: dimensions
 };
 
 /**

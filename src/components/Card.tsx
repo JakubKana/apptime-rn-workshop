@@ -1,17 +1,20 @@
-import React from 'react'
-import { View, StyleSheet, ViewStyle } from 'react-native'
+import React from 'react';
+import { View, StyleSheet, ViewStyle } from 'react-native';
 
 interface CardProps {
-  children: React.ReactNode
-  style?: ViewStyle
+  children: React.ReactNode;
+  style?: ViewStyle;
 }
 
 const Card = (props: CardProps): JSX.Element => {
-  return <View style={{ ...styles.card, ...props.style }}>{props.children}</View>
-}
+  return <View style={{ ...styles.card, ...props.style }}>{props.children}</View>;
+};
 
 const styles = StyleSheet.create({
   card: {
+    justifyContent: 'flex-start',
+    flexDirection: 'column',
+    alignItems: 'stretch',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.26,
     shadowRadius: 6,
@@ -21,6 +24,6 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 20
   }
-})
+});
 
-export { Card }
+export { Card };
